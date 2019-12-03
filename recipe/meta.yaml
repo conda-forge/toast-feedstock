@@ -2,7 +2,7 @@
 {% set version = '2.3.5' %}
 {% set sha256 = '05593534a6d6b012c8566f9b0463aefb1f4186a86325702cc41f6273c9b7cf05' %}
 
-{% set build = 0 %}
+{% set build = 1 %}
 
 {% set mpi = mpi or 'nompi' %}
 
