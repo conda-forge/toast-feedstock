@@ -1,6 +1,5 @@
-
-{% set version = "2.3.6" %}
-{% set sha256 = "ebdd1d631e1d074fd4c1d212a54b1893853228067856dd42ce3f0ce1b77506be" %}
+{% set version = "2.3.8" %}
+{% set sha256 = "aad27c1169d722058c7526005b7da8788a74b3f2be03503e4c7a83b0ccfefe85" %}
 
 {% set build = 0 %}
 
@@ -25,10 +24,10 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: True  # [py<34]
-  skip: True  # [win]
+  skip: true  # [py<34]
+  skip: true  # [win]
   number: {{ build }}
-  string: "{{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}"
+  string: {{ mpi_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}
   run_exports:
     - toast * {{ mpi_prefix }}_*
 
@@ -83,7 +82,7 @@ about:
   license: BSD-2-Clause
   license_family: BSD
   license_file: LICENSE
-  summary: 'Time Ordered Astrophysics Scalable Tools'
+  summary: Time Ordered Astrophysics Scalable Tools
   description: |
     TOAST is a software framework for simulating and processing timestream data
     collected by microwave telescopes.
