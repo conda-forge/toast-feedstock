@@ -31,7 +31,6 @@ requirements:
     - liblapack
     - suitesparse
     - libaatm
-    - numpy
   run:
     - llvm-openmp >=4.0.1  # [osx]
     - python
@@ -40,7 +39,7 @@ requirements:
     - liblapack
     - suitesparse
     - libaatm
-    - {{ pin_compatible('numpy') }}
+    - numpy
     - scipy
     - astropy
     - healpy
