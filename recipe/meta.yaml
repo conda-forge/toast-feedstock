@@ -34,17 +34,17 @@ requirements:
   run:
     - llvm-openmp >=4.0.1  # [osx]
     - python
-    - fftw
-    - libblas
-    - liblapack
-    - suitesparse
-    - libaatm
+    - {{ pin_compatible("fftw") }}
+    - {{ pin_compatible("libblas") }}
+    - {{ pin_compatible("liblapack") }}
+    - {{ pin_compatible("suitesparse") }}
+    - {{ pin_compatible("libaatm") }}
     - numpy
     - scipy
     - astropy
     - healpy
-    - pyephem
     - h5py
+    - ephem
 
 test:
   files:
