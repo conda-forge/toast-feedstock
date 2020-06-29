@@ -27,12 +27,16 @@ requirements:
     - llvm-openmp >=4.0.1  # [osx]
     - python
     - fftw
+    - libblas
+    - liblapack
     - suitesparse
     - libaatm
   run:
     - llvm-openmp >=4.0.1  # [osx]
     - python
     - fftw
+    - libblas
+    - liblapack
     - suitesparse
     - libaatm
     - numpy
