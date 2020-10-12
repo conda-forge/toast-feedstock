@@ -2,7 +2,12 @@
 {% set version = "2.3.8" %}
 {% set sha256 = "aad27c1169d722058c7526005b7da8788a74b3f2be03503e4c7a83b0ccfefe85" %}
 
-{% set build = 0 %}
+{% set build = 1 %}
+{% if blas_impl == 'openblas' %}
+{% set build = build + 100 %}
+{% endif %}
+
+{% set blas_prefix = blas_impl %}
 
 package:
   name: toast
@@ -16,6 +21,9 @@ build:
   skip: True  # [py<36]
   skip: True  # [win]
   number: {{ build }}
+  string: "{{ blas_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}"
+  run_exports:
+    - toast * {{ blas_prefix }}_*
 
 requirements:
   build:
@@ -27,7 +35,8 @@ requirements:
     - llvm-openmp >=4.0.1  # [osx]
     - python
     - fftw
-    - libblas
+    - openblas * openmp_*  # [blas_impl == 'openblas']
+    - mkl-devel  # [blas_impl == 'mkl']
     - liblapack
     - suitesparse
     - libaatm
@@ -35,7 +44,8 @@ requirements:
     - llvm-openmp >=4.0.1  # [osx]
     - python
     - {{ pin_compatible("fftw") }}
-    - {{ pin_compatible("libblas") }}
+    - openblas * openmp_*  # [blas_impl == 'openblas']
+    - {{ pin_compatible("mkl") }}  # [blas_impl == 'mkl']
     - {{ pin_compatible("liblapack") }}
     - {{ pin_compatible("suitesparse") }}
     - {{ pin_compatible("libaatm") }}
