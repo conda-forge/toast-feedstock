@@ -1,6 +1,6 @@
 
-{% set version = "2.3.9.post1" %}
-{% set sha256 = "6813c3fe3bd6e8353fd9e2e61b79bfe4f61e49418e1ff467fbd4e45c963aa8b9" %}
+{% set version = "2.3.10" %}
+{% set sha256 = "cd630d45e5da1db7725317c5d09c9a0649f2740a74e4f2b6c649c09426a138a2" %}
 
 {% set build = 0 %}
 {% if blas_impl == 'openblas' %}
