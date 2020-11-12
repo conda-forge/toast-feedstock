@@ -3,7 +3,7 @@
 set -e
 set -x
 
-export OMP_NUM_THREADS=1
+export OMP_NUM_THREADS=2
 
 echo "Testing build"
 
