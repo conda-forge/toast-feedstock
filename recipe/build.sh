@@ -16,6 +16,9 @@ else
   CMAKE_BUILD_TYPE=Release
 fi
 
+# Debug lapack names
+sed -i -e 's/#message/message/g' cmake/FindLAPACKnames.cmake
+
 mkdir -p build
 cd build
 cmake \
