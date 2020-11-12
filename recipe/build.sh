@@ -18,6 +18,7 @@ fi
 
 # Debug lapack names
 sed -i -e 's/#message/message/g' cmake/FindLAPACKnames.cmake
+sed -i -e 's/${CMAKE_THREAD_LIBS_INIT} -lm -l${CMAKE_DL_LIBS}/${CMAKE_THREAD_LIBS_INIT} m ${CMAKE_DL_LIBS}/g' cmake/FindMKL.cmake
 
 mkdir -p build
 cd build
