@@ -1,9 +1,11 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
+blas_impl:
+- openblas
 c_compiler:
 - clang
 c_compiler_version:
-- '9'
+- '10'
 channel_sources:
 - conda-forge,defaults
 channel_targets:
@@ -11,17 +13,15 @@ channel_targets:
 cxx_compiler:
 - clangxx
 cxx_compiler_version:
-- '9'
+- '10'
 fftw:
 - '3'
-libblas:
-- 3.8 *netlib
 liblapack:
-- 3.8.0 *netlib
+- 3.8 *netlib
 macos_machine:
 - x86_64-apple-darwin13.4.0
-macos_min_version:
-- '10.9'
+openblas:
+- 0.3.*
 pin_run_as_build:
   fftw:
     max_pin: x
@@ -29,6 +29,11 @@ pin_run_as_build:
     min_pin: x.x
     max_pin: x.x
 python:
-- 3.8.* *_cpython
+- 3.9.* *_cpython
 suitesparse:
 - '5.6'
+target_platform:
+- osx-64
+zip_keys:
+- - c_compiler_version
+  - cxx_compiler_version
