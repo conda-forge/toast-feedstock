@@ -30,6 +30,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ compiler('cxx') }}
     - cmake
+    - make                 # [unix]
     - llvm-openmp >=4.0.1  # [osx]
   host:
     - llvm-openmp >=4.0.1  # [osx]
