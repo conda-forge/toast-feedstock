@@ -5,14 +5,14 @@
 jobs:
 - job: osx
   pool:
-    vmImage: macOS-10.15
+    vmImage: macOS-11
   strategy:
     matrix:
       osx_64_blas_implmklpython3.10.____cpython:
         CONFIG: osx_64_blas_implmklpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_blas_implmklpython3.7.____cpython:
-        CONFIG: osx_64_blas_implmklpython3.7.____cpython
+      osx_64_blas_implmklpython3.11.____cpython:
+        CONFIG: osx_64_blas_implmklpython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
       osx_64_blas_implmklpython3.8.____cpython:
         CONFIG: osx_64_blas_implmklpython3.8.____cpython
@@ -23,8 +23,8 @@ jobs:
       osx_64_blas_implopenblaspython3.10.____cpython:
         CONFIG: osx_64_blas_implopenblaspython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
-      osx_64_blas_implopenblaspython3.7.____cpython:
-        CONFIG: osx_64_blas_implopenblaspython3.7.____cpython
+      osx_64_blas_implopenblaspython3.11.____cpython:
+        CONFIG: osx_64_blas_implopenblaspython3.11.____cpython
         UPLOAD_PACKAGES: 'True'
       osx_64_blas_implopenblaspython3.8.____cpython:
         CONFIG: osx_64_blas_implopenblaspython3.8.____cpython
