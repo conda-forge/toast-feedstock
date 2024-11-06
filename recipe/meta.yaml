@@ -2,7 +2,7 @@
 {% set version = "2.3.14" %}
 {% set sha256 = "924912213af3bbacd622b9318bd6d79055c4d57f58c2da486f4b3f62a12466f1" %}
 
-{% set build = 2 %}
+{% set build = 3 %}
 {% if blas_impl == 'openblas' %}
 {% set build = build + 100 %}
 {% endif %}
@@ -28,6 +28,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - make                 # [unix]
