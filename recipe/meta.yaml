@@ -39,18 +39,13 @@ requirements:
     - fftw  # [blas_impl == 'openblas']
     - openblas * openmp_*  # [blas_impl == 'openblas']
     - mkl-devel  # [blas_impl == 'mkl']
-    - liblapack
+    - liblapack  # [blas_impl != 'mkl']
     - suitesparse
     - libaatm
   run:
     - llvm-openmp >=4.0.1  # [osx]
     - python
-    - {{ pin_compatible("fftw") }}  # [blas_impl == 'openblas']
     - openblas * openmp_*  # [blas_impl == 'openblas']
-    - {{ pin_compatible("mkl") }}  # [blas_impl == 'mkl']
-    - {{ pin_compatible("liblapack") }}
-    - {{ pin_compatible("suitesparse") }}
-    - {{ pin_compatible("libaatm") }}
     - numpy
     - scipy
     - astropy
