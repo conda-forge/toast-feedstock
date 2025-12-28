@@ -1,4 +1,3 @@
-
 {% set version = "2.3.14" %}
 {% set sha256 = "924912213af3bbacd622b9318bd6d79055c4d57f58c2da486f4b3f62a12466f1" %}
 
@@ -30,7 +29,7 @@ requirements:
     - {{ compiler('c') }}
     - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - cmake
+    - cmake <4
     - make                 # [unix]
     - llvm-openmp >=4.0.1  # [osx]
   host:
