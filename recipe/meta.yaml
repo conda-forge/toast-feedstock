@@ -1,8 +1,7 @@
-
 {% set version = "2.3.14" %}
 {% set sha256 = "924912213af3bbacd622b9318bd6d79055c4d57f58c2da486f4b3f62a12466f1" %}
 
-{% set build = 2 %}
+{% set build = 3 %}
 {% if blas_impl == 'openblas' %}
 {% set build = build + 100 %}
 {% endif %}
@@ -28,8 +27,9 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
-    - cmake
+    - cmake <4
     - make                 # [unix]
     - llvm-openmp >=4.0.1  # [osx]
   host:
@@ -38,18 +38,13 @@ requirements:
     - fftw  # [blas_impl == 'openblas']
     - openblas * openmp_*  # [blas_impl == 'openblas']
     - mkl-devel  # [blas_impl == 'mkl']
-    - liblapack
+    - liblapack  # [blas_impl != 'mkl']
     - suitesparse
     - libaatm
   run:
     - llvm-openmp >=4.0.1  # [osx]
     - python
-    - {{ pin_compatible("fftw") }}  # [blas_impl == 'openblas']
     - openblas * openmp_*  # [blas_impl == 'openblas']
-    - {{ pin_compatible("mkl") }}  # [blas_impl == 'mkl']
-    - {{ pin_compatible("liblapack") }}
-    - {{ pin_compatible("suitesparse") }}
-    - {{ pin_compatible("libaatm") }}
     - numpy
     - scipy
     - astropy
