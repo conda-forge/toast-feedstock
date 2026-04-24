@@ -12,8 +12,12 @@ jobs:
         CONFIG: linux_64_blas_implmklpython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_blas_implmklpython3.7.____cpython:
-        CONFIG: linux_64_blas_implmklpython3.7.____cpython
+      linux_64_blas_implmklpython3.11.____cpython:
+        CONFIG: linux_64_blas_implmklpython3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_blas_implmklpython3.12.____cpython:
+        CONFIG: linux_64_blas_implmklpython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_blas_implmklpython3.8.____cpython:
@@ -28,8 +32,12 @@ jobs:
         CONFIG: linux_64_blas_implopenblaspython3.10.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
-      linux_64_blas_implopenblaspython3.7.____cpython:
-        CONFIG: linux_64_blas_implopenblaspython3.7.____cpython
+      linux_64_blas_implopenblaspython3.11.____cpython:
+        CONFIG: linux_64_blas_implopenblaspython3.11.____cpython
+        UPLOAD_PACKAGES: 'True'
+        DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
+      linux_64_blas_implopenblaspython3.12.____cpython:
+        CONFIG: linux_64_blas_implopenblaspython3.12.____cpython
         UPLOAD_PACKAGES: 'True'
         DOCKER_IMAGE: quay.io/condaforge/linux-anvil-cos7-x86_64
       linux_64_blas_implopenblaspython3.8.____cpython:
@@ -43,11 +51,6 @@ jobs:
   timeoutInMinutes: 360
 
   steps:
-  - script: |
-         rm -rf /opt/ghc
-         df -h
-    displayName: Manage disk space
-
   # configure qemu binfmt-misc running.  This allows us to run docker containers
   # embedded qemu-static
   - script: |
