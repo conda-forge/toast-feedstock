@@ -1,3 +1,0 @@
-blas_impl:
-- openblas
-- mkl        # [x86 or x86_64]
