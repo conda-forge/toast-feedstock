@@ -10,8 +10,8 @@ source:
   sha256: f90cde38d4369d19dad13ab3a6388a96ab0c199e6fcb52196304e4910353bf0e
 
 build:
-  skip: True  # [py<310 or win]
   number: 0
+  skip: True  # [py<310 or win]
   script_env:
     - SETUPTOOLS_SCM_PRETEND_VERSION={{ version }}
   script:
@@ -28,15 +28,13 @@ requirements:
     - cmake
     - make
     - ninja
-    - llvm-openmp  # [osx]
-    - libgomp  # [linux]
   host:
     - python
     - pip
-    - scikit-build-core >=0.11
-    - pybind11 >=3.0
-    - setuptools >=80
-    - setuptools-scm >=8
+    - scikit-build-core
+    - pybind11
+    - setuptools
+    - setuptools-scm
     - numpy
     - llvm-openmp  # [osx]
     - libgomp  # [linux]
