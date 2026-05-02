@@ -1,5 +1,5 @@
 
-{% set version = "3.0.0" %}
+{% set version = "3.0.2" %}
 
 package:
   name: toast
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/t/toast/toast-{{ version }}.tar.gz
-  sha256: XXXXX
+  sha256: f90cde38d4369d19dad13ab3a6388a96ab0c199e6fcb52196304e4910353bf0e
 
 build:
   skip: True  # [py<310 or win]
@@ -49,7 +49,7 @@ requirements:
     - python
     - numpy
     - scipy
-    - astropy
+    - astropy-base
     - healpy
     - h5py
     - ephem
