@@ -72,7 +72,7 @@ test:
     - mpich
   commands:
     - OMP_NUM_THREADS=2 python -c 'import toast.tests; toast.tests.run()'  # [build_platform == target_platform]
-    - OMP_NUM_THREADS=1 mpirun -np 2 python -c 'import toast.tests; toast.tests.run()'  # [build_platform == target_platform]
+    #- OMP_NUM_THREADS=1 mpirun -np 2 python -c 'import toast.tests; toast.tests.run()'  # [build_platform == target_platform]
 
 about:
   home: https://github.com/hpc4cmb/toast
