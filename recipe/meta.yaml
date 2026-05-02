@@ -28,6 +28,8 @@ requirements:
     - cmake
     - make
     - ninja
+    - llvm-openmp  # [osx]
+    - libgomp  # [linux]
   host:
     - python
     - pip
