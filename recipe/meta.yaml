@@ -43,7 +43,6 @@ requirements:
     - libopenblas * *openmp*
     - libblas * *openblas
     - fftw
-    - liblapack
     - suitesparse
     - libaatm
   run:
