@@ -1,8 +1,7 @@
+{% set version = "3.0.2" %}
+{% set sha256 = "83c4b0da4bfa5c5d30e1d8f0aff7dfc1822fe6338476ee9197802363fb629afd" %}
 
-{% set version = "2.3.14" %}
-{% set sha256 = "924912213af3bbacd622b9318bd6d79055c4d57f58c2da486f4b3f62a12466f1" %}
-
-{% set build = 2 %}
+{% set build = 0 %}
 {% if blas_impl == 'openblas' %}
 {% set build = build + 100 %}
 {% endif %}
@@ -18,8 +17,8 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  skip: True  # [py<37]
-  skip: True  # [win]
+  skip: true  # [py<37]
+  skip: true  # [win]
   number: {{ build }}
   string: "{{ blas_prefix }}_py{{ py }}h{{ PKG_HASH }}_{{ build }}"
   run_exports:
@@ -28,6 +27,7 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
+    - {{ stdlib("c") }}
     - {{ compiler('cxx') }}
     - cmake
     - make                 # [unix]
