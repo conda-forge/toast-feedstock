@@ -1,5 +1,5 @@
 
-{% set version = "3.0.2" %}
+{% set version = "3.0.3" %}
 
 package:
   name: toast
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/t/toast/toast-{{ version }}.tar.gz
-  sha256: f90cde38d4369d19dad13ab3a6388a96ab0c199e6fcb52196304e4910353bf0e
+  sha256: bed736fa2f7a7b183f3913ebce87ba5b419bd26634bc4534ae3a31f24908c5f2
 
 build:
   number: 0
@@ -46,8 +46,6 @@ requirements:
     - suitesparse
     - libaatm
   run:
-    - llvm-openmp  # [osx]
-    - libgomp  # [linux]
     - libopenblas * *openmp*
     - libblas * *openblas
     - python
