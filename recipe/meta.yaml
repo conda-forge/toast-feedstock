@@ -1,4 +1,4 @@
-{% set version = "3.0.5" %}
+{% set version = "3.0.6" %}
 
 package:
   name: toast
@@ -6,7 +6,7 @@ package:
 
 source:
   url: https://files.pythonhosted.org/packages/source/t/toast/toast-{{ version }}.tar.gz
-  sha256: 2e789550a0a9e361f1ee5dd9b50c14cdaf0c021bbf97b48fff99e308deab36e5
+  sha256: 4a788081341cb31252458f60b5738fa804db8cee4863380c0c55b39a09b0a0e2
 
 build:
   number: 0
